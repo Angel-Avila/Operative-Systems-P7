@@ -35,16 +35,23 @@ int pagefault(char *vaddress)
       // Busca un marco libre en el sistema
       frame=getfreeframe();
       printf("Free frame: 0x%04x\n", frame);
-      printf("===================== LRU: 0x%04x =====================\n", getLRU());
+      //printf("===================== LRU: 0x%04x =====================\n", getLRU());
     } else {
       // Busca un marco virtual libre (si virtual se cambia a frame se crea un horrible VIRUS)
-      int virtual=getvirtualframe();
-      printf("Virtual frame: 0x%04x\n", virtual);
+      frame=getvirtualframe();
+      printf("Virtual frame: 0x%04x\n", frame);
 
-      //int lruFrame = getLRU(); // regresa el LRU frame en hexa
+      int lruFrame = getLRU(); // regresa el LRU frame en hexa
 
       // Copiar marco
+      FILE *swap = fopen("swap", "w");
+      long int offset = lruFrame - framesbegin;
+      printf("Offset: %d\n", offset);
+      fseek(swap, offset, SEEK_SET);
 
+
+
+      fclose(swap);
     }
 
     if(frame==-1)
@@ -91,15 +98,15 @@ unsigned long getLRU() {
       lruFrame = ptptr->framenumber;
     }
 
-    printf("*********************************\n");
+    /*printf("*********************************\n");
     printf("Last used: %d\n", lastUsed);
     printf("LRU Frame: 0x%04x\n", lruFrame);
     printf("Ptr->LastAccess %d\n", ptptr->tlastaccess);
-    printf("Ptr->FrameNumber 0x%04x\n", ptptr->framenumber);
+    printf("Ptr->FrameNumber 0x%04x\n", ptptr->framenumber);*/
 
     ptptr++;
   }
-  printf("*********************************\n");
+  //printf("*********************************\n");
 
   return(lruFrame);
 }
