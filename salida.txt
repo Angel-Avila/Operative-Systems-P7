@@ -1,30 +1,104 @@
-System Frame Table area = 0x25b7000
-Proccess Page Table area = 0x25b8000
-Frames area = 0x25b9000
-Base = 0x25c5000
-Primer marco 25B9
-Frame 25B9, Dirección 0x25b9000 0x25b9000 
-Frame 25BA, Dirección 0x25ba000 0x25ba000 
-Frame 25BB, Dirección 0x25bb000 0x25bb000 
-Frame 25BC, Dirección 0x25bc000 0x25bc000 
-Frame 25BD, Dirección 0x25bd000 0x25bd000 
-Frame 25BE, Dirección 0x25be000 0x25be000 
-Frame 25BF, Dirección 0x25bf000 0x25bf000 
-Frame 25C0, Dirección 0x25c0000 0x25c0000 
-Frame 25C1, Dirección 0x25c1000 0x25c1000 
-Frame 25C2, Dirección 0x25c2000 0x25c2000 
-Frame 25C3, Dirección 0x25c3000 0x25c3000 
-Frame 25C4, Dirección 0x25c4000 0x25c4000 
+System Frame Table area = 0x1bb7000
+Proccess Page Table area = 0x1bb8000
+Frames area = 0x1bb9000
+Base = 0x1bc5000
+Primer marco 1BB9
+Frame 1BB9, Dirección 0x1bb9000 0x1bb9000 
+Frame 1BBA, Dirección 0x1bba000 0x1bba000 
+Frame 1BBB, Dirección 0x1bbb000 0x1bbb000 
+Frame 1BBC, Dirección 0x1bbc000 0x1bbc000 
+Frame 1BBD, Dirección 0x1bbd000 0x1bbd000 
+Frame 1BBE, Dirección 0x1bbe000 0x1bbe000 
+Frame 1BBF, Dirección 0x1bbf000 0x1bbf000 
+Frame 1BC0, Dirección 0x1bc0000 0x1bc0000 
+Frame 1BC1, Dirección 0x1bc1000 0x1bc1000 
+Frame 1BC2, Dirección 0x1bc2000 0x1bc2000 
+Frame 1BC3, Dirección 0x1bc3000 0x1bc3000 
+Frame 1BC4, Dirección 0x1bc4000 0x1bc4000 
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=2 Página=0
+Páginas del proceso -->
+-----------------------------   0    -----------------------------
+Proceso=2, Página 0 cargada en el marco 1BBC
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  1  0 1BBC
+                    2 ->   1  0  0 FFFFFFFF
+                    2 ->   2  0  0 FFFFFFFF
+                    2 ->   3  0  0 FFFFFFFF
+                    2 ->   4  0  0 FFFFFFFF
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=(nil)
+Proceso=2 Página=0
+copiado hola soy proceso 2 en la dirección relativa 0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x3000
+Proceso=2 Página=3
+Páginas del proceso --> 0 
+-----------------------------   1    -----------------------------
+Proceso=2, Página 3 cargada en el marco 1BC0
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  1  1 1BBC
+                    2 ->   1  0  0 FFFFFFFF
+                    2 ->   2  0  0 FFFFFFFF
+                    2 ->   3  1  0 1BC0
+                    2 ->   4  0  0 FFFFFFFF
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x4000
+Proceso=2 Página=4
+Páginas del proceso --> 0  3 
+-----------------------------   2    -----------------------------
+Proceso=2, Página 4 cargada en el marco 1BC3
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  1  1 1BBC
+                    2 ->   1  0  0 FFFFFFFF
+                    2 ->   2  0  0 FFFFFFFF
+                    2 ->   3  1  0 1BC0
+                    2 ->   4  1  0 1BC3
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=0x4001
+Proceso=2 Página=4
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x1001
+Proceso=2 Página=1
+Páginas del proceso --> 0  3  4 
+-----------------------------   3    -----------------------------
+Proceso 2, libera los marcos --> 1BBC  1BC0  1BC3 
+System Frame Table area = 0x1bb7000
+Proccess Page Table area = 0x1bb8000
+Frames area = 0x1bb9000
+Base = 0x1bc5000
+Primer marco 1BB9
+Frame 1BB9, Dirección 0x1bb9000 0x1bb9000 
+Frame 1BBA, Dirección 0x1bba000 0x1bba000 
+Frame 1BBB, Dirección 0x1bbb000 0x1bbb000 
+Frame 1BBC, Dirección 0x1bbc000 0x1bbc000 
+Frame 1BBD, Dirección 0x1bbd000 0x1bbd000 
+Frame 1BBE, Dirección 0x1bbe000 0x1bbe000 
+Frame 1BBF, Dirección 0x1bbf000 0x1bbf000 
+Frame 1BC0, Dirección 0x1bc0000 0x1bc0000 
+Frame 1BC1, Dirección 0x1bc1000 0x1bc1000 
+Frame 1BC2, Dirección 0x1bc2000 0x1bc2000 
+Frame 1BC3, Dirección 0x1bc3000 0x1bc3000 
+Frame 1BC4, Dirección 0x1bc4000 0x1bc4000 
 ---------------------------
 Page fault handler
 Direccion que provocó el fallo=(nil)
 Proceso=3 Página=0
 Páginas del proceso -->
-Free frame: 0x25b9
-===================== LRU: 0xffffffff =====================
-Proceso=3, Página 0 cargada en el marco 25B9
+-----------------------------   0    -----------------------------
+Proceso=3, Página 0 cargada en el marco 1BB9
 Tabla de páginas Proc -> Pag Pr Mo Fr
-                    3 ->   0  1  0 25B9
+                    3 ->   0  1  0 1BB9
                     3 ->   1  0  0 FFFFFFFF
                     3 ->   2  0  0 FFFFFFFF
                     3 ->   3  0  0 FFFFFFFF
@@ -35,13 +109,12 @@ Page fault handler
 Direccion que provocó el fallo=0x2000
 Proceso=3 Página=2
 Páginas del proceso --> 0 
-Free frame: 0x25bd
-===================== LRU: 0x25b9 =====================
-Proceso=3, Página 2 cargada en el marco 25BD
+-----------------------------   1    -----------------------------
+Proceso=3, Página 2 cargada en el marco 1BBD
 Tabla de páginas Proc -> Pag Pr Mo Fr
-                    3 ->   0  1  0 25B9
+                    3 ->   0  1  0 1BB9
                     3 ->   1  0  0 FFFFFFFF
-                    3 ->   2  1  0 25BD
+                    3 ->   2  1  0 1BBD
                     3 ->   3  0  0 FFFFFFFF
                     3 ->   4  0  0 FFFFFFFF
                     3 ->   5  0  0 FFFFFFFF
@@ -55,35 +128,124 @@ Page fault handler
 Direccion que provocó el fallo=0x1001
 Proceso=3 Página=1
 Páginas del proceso --> 0  2 
-Free frame: 0x25c4
-===================== LRU: 0x25b9 =====================
-Proceso=3, Página 1 cargada en el marco 25C4
+-----------------------------   2    -----------------------------
+Proceso=3, Página 1 cargada en el marco 1BBB
 Tabla de páginas Proc -> Pag Pr Mo Fr
-                    3 ->   0  1  0 25B9
-                    3 ->   1  1  0 25C4
-                    3 ->   2  1  1 25BD
+                    3 ->   0  1  0 1BB9
+                    3 ->   1  1  0 1BBB
+                    3 ->   2  1  1 1BBD
                     3 ->   3  0  0 FFFFFFFF
                     3 ->   4  0  0 FFFFFFFF
                     3 ->   5  0  0 FFFFFFFF
 copied hola soy proceso 3 en la dirección relativa 2000
 copied hola soy proceso 3 en la dirección relativa 2000
-Proceso 3, libera los marcos --> 25B9  25C4  25BD 
+Proceso 3, libera los marcos --> 1BB9  1BBB  1BBD 
 Termina proceso 3, Total de fallos de página = 3
-System Frame Table area = 0x25b7000
-Proccess Page Table area = 0x25b8000
-Frames area = 0x25b9000
-Base = 0x25c5000
-Primer marco 25B9
-Frame 25B9, Dirección 0x25b9000 0x25b9000 
-Frame 25BA, Dirección 0x25ba000 0x25ba000 
-Frame 25BB, Dirección 0x25bb000 0x25bb000 
-Frame 25BC, Dirección 0x25bc000 0x25bc000 
-Frame 25BD, Dirección 0x25bd000 0x25bd000 
-Frame 25BE, Dirección 0x25be000 0x25be000 
-Frame 25BF, Dirección 0x25bf000 0x25bf000 
-Frame 25C0, Dirección 0x25c0000 0x25c0000 
-Frame 25C1, Dirección 0x25c1000 0x25c1000 
-Frame 25C2, Dirección 0x25c2000 0x25c2000 
-Frame 25C3, Dirección 0x25c3000 0x25c3000 
-Frame 25C4, Dirección 0x25c4000 0x25c4000 
-Tiempo total de ejecución 0.240692
+System Frame Table area = 0x1bb7000
+Proccess Page Table area = 0x1bb8000
+Frames area = 0x1bb9000
+Base = 0x1bc5000
+Primer marco 1BB9
+Frame 1BB9, Dirección 0x1bb9000 0x1bb9000 
+Frame 1BBA, Dirección 0x1bba000 0x1bba000 
+Frame 1BBB, Dirección 0x1bbb000 0x1bbb000 
+Frame 1BBC, Dirección 0x1bbc000 0x1bbc000 
+Frame 1BBD, Dirección 0x1bbd000 0x1bbd000 
+Frame 1BBE, Dirección 0x1bbe000 0x1bbe000 
+Frame 1BBF, Dirección 0x1bbf000 0x1bbf000 
+Frame 1BC0, Dirección 0x1bc0000 0x1bc0000 
+Frame 1BC1, Dirección 0x1bc1000 0x1bc1000 
+Frame 1BC2, Dirección 0x1bc2000 0x1bc2000 
+Frame 1BC3, Dirección 0x1bc3000 0x1bc3000 
+Frame 1BC4, Dirección 0x1bc4000 0x1bc4000 
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=1 Página=0
+Páginas del proceso -->
+-----------------------------   0    -----------------------------
+Proceso=1, Página 0 cargada en el marco 1BBA
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  1  0 1BBA
+                    1 ->   1  0  0 FFFFFFFF
+                    1 ->   2  0  0 FFFFFFFF
+                    1 ->   3  0  0 FFFFFFFF
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=(nil)
+Proceso=1 Página=0
+Proceso 1, escribe mensaje de prueba
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x3000
+Proceso=1 Página=3
+Páginas del proceso --> 0 
+-----------------------------   1    -----------------------------
+Proceso=1, Página 3 cargada en el marco 1BBE
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  1  1 1BBA
+                    1 ->   1  0  0 FFFFFFFF
+                    1 ->   2  0  0 FFFFFFFF
+                    1 ->   3  1  0 1BBE
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x1000
+Proceso=1 Página=1
+Páginas del proceso --> 0  3 
+-----------------------------   2    -----------------------------
+Proceso=1, Página 1 cargada en el marco 1BC1
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  1  1 1BBA
+                    1 ->   1  1  0 1BC1
+                    1 ->   2  0  0 FFFFFFFF
+                    1 ->   3  1  0 1BBE
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=0x1001
+Proceso=1 Página=1
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x2001
+Proceso=1 Página=2
+Páginas del proceso --> 0  1  3 
+-----------------------------   3    -----------------------------
+Proceso=1, Página 2 cargada en el marco 1BBC
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  1  1 1BBA
+                    1 ->   1  1  1 1BC1
+                    1 ->   2  1  0 1BBC
+                    1 ->   3  1  0 1BBE
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=0x2001
+Proceso=1 Página=2
+Proceso 1, escribe mensaje de prueba
+Proceso 1, escribe mensaje de prueba
+Proceso 1, libera los marcos --> 1BBA  1BC1  1BBC  1BBE 
+Termina proceso 1, Total de fallos de página = 4
+System Frame Table area = 0x1bb7000
+Proccess Page Table area = 0x1bb8000
+Frames area = 0x1bb9000
+Base = 0x1bc5000
+Primer marco 1BB9
+Frame 1BB9, Dirección 0x1bb9000 0x1bb9000 
+Frame 1BBA, Dirección 0x1bba000 0x1bba000 
+Frame 1BBB, Dirección 0x1bbb000 0x1bbb000 
+Frame 1BBC, Dirección 0x1bbc000 0x1bbc000 
+Frame 1BBD, Dirección 0x1bbd000 0x1bbd000 
+Frame 1BBE, Dirección 0x1bbe000 0x1bbe000 
+Frame 1BBF, Dirección 0x1bbf000 0x1bbf000 
+Frame 1BC0, Dirección 0x1bc0000 0x1bc0000 
+Frame 1BC1, Dirección 0x1bc1000 0x1bc1000 
+Frame 1BC2, Dirección 0x1bc2000 0x1bc2000 
+Frame 1BC3, Dirección 0x1bc3000 0x1bc3000 
+Frame 1BC4, Dirección 0x1bc4000 0x1bc4000 
+Tiempo total de ejecución 0.241110
