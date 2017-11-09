@@ -1,0 +1,612 @@
+System Frame Table area = 0xccc000
+Proccess Page Table area = 0xccd000
+Frames area = 0xcce000
+Base = 0xcda000
+Primer marco CCE
+Frame CCE, Dirección 0xcce000 0xcce000 
+Frame CCF, Dirección 0xccf000 0xccf000 
+Frame CD0, Dirección 0xcd0000 0xcd0000 
+Frame CD1, Dirección 0xcd1000 0xcd1000 
+Frame CD2, Dirección 0xcd2000 0xcd2000 
+Frame CD3, Dirección 0xcd3000 0xcd3000 
+Frame CD4, Dirección 0xcd4000 0xcd4000 
+Frame CD5, Dirección 0xcd5000 0xcd5000 
+Frame CD6, Dirección 0xcd6000 0xcd6000 
+Frame CD7, Dirección 0xcd7000 0xcd7000 
+Frame CD8, Dirección 0xcd8000 0xcd8000 
+Frame CD9, Dirección 0xcd9000 0xcd9000 
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=1 Página=0
+Páginas del proceso -->
+Free frame: 0x0ccf
+*********************************
+Last used: 1836684
+LRU Frame: 0xffffffff
+Ptr->LastAccess 1836684
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836684
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836684
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836684
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836684
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836684
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+===================== LRU: 0xffffffff =====================
+Proceso=1, Página 0 cargada en el marco CCF
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  1  0 CCF
+                    1 ->   1  0  0 FFFFFFFF
+                    1 ->   2  0  0 FFFFFFFF
+                    1 ->   3  0  0 FFFFFFFF
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=(nil)
+Proceso=1 Página=0
+Proceso 1, escribe mensaje de prueba
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x3000
+Proceso=1 Página=3
+Páginas del proceso --> 0 
+Free frame: 0x0cd3
+*********************************
+Last used: 1836876
+LRU Frame: 0x0ccf
+Ptr->LastAccess 1836876
+Ptr->FrameNumber 0x0ccf
+*********************************
+Last used: 1836876
+LRU Frame: 0x0ccf
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836876
+LRU Frame: 0x0ccf
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836876
+LRU Frame: 0x0ccf
+Ptr->LastAccess 1846748
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836876
+LRU Frame: 0x0ccf
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836876
+LRU Frame: 0x0ccf
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+===================== LRU: 0x0ccf =====================
+Proceso=1, Página 3 cargada en el marco CD3
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  1  1 CCF
+                    1 ->   1  0  0 FFFFFFFF
+                    1 ->   2  0  0 FFFFFFFF
+                    1 ->   3  1  0 CD3
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x1000
+Proceso=1 Página=1
+Páginas del proceso --> 0  3 
+Free frame: 0x0cd6
+*********************************
+Last used: 1836876
+LRU Frame: 0x0ccf
+Ptr->LastAccess 1836876
+Ptr->FrameNumber 0x0ccf
+*********************************
+Last used: 1836876
+LRU Frame: 0x0ccf
+Ptr->LastAccess 1856744
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836876
+LRU Frame: 0x0ccf
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836876
+LRU Frame: 0x0ccf
+Ptr->LastAccess 1846748
+Ptr->FrameNumber 0x0cd3
+*********************************
+Last used: 1836876
+LRU Frame: 0x0ccf
+Ptr->LastAccess 0System Frame Table area = 0xccc000
+Proccess Page Table area = 0xccd000
+Frames area = 0xcce000
+Base = 0xcda000
+Primer marco CCE
+Frame CCE, Dirección 0xcce000 0xcce000 
+Frame CCF, Dirección 0xccf000 0xccf000 
+Frame CD0, Dirección 0xcd0000 0xcd0000 
+Frame CD1, Dirección 0xcd1000 0xcd1000 
+Frame CD2, Dirección 0xcd2000 0xcd2000 
+Frame CD3, Dirección 0xcd3000 0xcd3000 
+Frame CD4, Dirección 0xcd4000 0xcd4000 
+Frame CD5, Dirección 0xcd5000 0xcd5000 
+Frame CD6, Dirección 0xcd6000 0xcd6000 
+Frame CD7, Dirección 0xcd7000 0xcd7000 
+Frame CD8, Dirección 0xcd8000 0xcd8000 
+Frame CD9, Dirección 0xcd9000 0xcd9000 
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=2 Página=0
+Páginas del proceso -->
+Free frame: 0x0cd0
+*********************************
+Last used: 1836970
+LRU Frame: 0xffffffff
+Ptr->LastAccess 1836970
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836970
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836970
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836970
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836970
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836970
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+===================== LRU: 0xffffffff =====================
+Proceso=2, Página 0 cargada en el marco CD0
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  1  0 CD0
+                    2 ->   1  0  0 FFFFFFFF
+                    2 ->   2  0  0 FFFFFFFF
+                    2 ->   3  0  0 FFFFFFFF
+                    2 ->   4  0  0 FFFFFFFF
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=(nil)
+Proceso=2 Página=0
+copiado hola soy proceso 2 en la dirección relativa 0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x3000
+Proceso=2 Página=3
+Páginas del proceso --> 0 
+Free frame: 0x0cd4
+*********************************
+Last used: 1837064
+LRU Frame: 0x0cd0
+Ptr->LastAccess 1837064
+Ptr->FrameNumber 0x0cd0
+*********************************
+Last used: 1837064
+LRU Frame: 0x0cd0
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837064
+LRU Frame: 0x0cd0
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837064
+LRU Frame: 0x0cd0
+Ptr->LastAccess 1847054
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837064
+LRU Frame: 0x0cd0
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837064
+LRU Frame: 0x0cd0
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+===================== LRU: 0x0cd0 =====================
+Proceso=2, Página 3 cargada en el marco CD4
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  1  1 CD0
+                    2 ->   1  0  0 FFFFFFFF
+                    2 ->   2  0  0 FFFFFFFF
+                    2 ->   3  1  0 CD4
+                    2 ->   4  0  0 FFFFFFFF
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x4000
+Proceso=2 Página=4
+Páginas del proceso --> 0  3 
+Free frame: 0x0cd7
+*********************************
+Last used: 1837064
+LRU Frame: 0x0cd0
+Ptr->LastAccess 1837064
+Ptr->FrameNumber 0x0cd0
+*********************************
+Last used: 1837064
+LRU Frame: 0x0cd0
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837064
+LRU Frame: 0x0cd0
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837064
+LRU Frame: 0x0cd0
+Ptr->LastAccess 1847054
+Ptr->FrameNumber 0x0cd4
+*********************************
+Last used: 1837064
+LRU Frame: 0x0cd0
+Ptr->System Frame Table area = 0xccc000
+Proccess Page Table area = 0xccd000
+Frames area = 0xcce000
+Base = 0xcda000
+Primer marco CCE
+Frame CCE, Dirección 0xcce000 0xcce000 
+Frame CCF, Dirección 0xccf000 0xccf000 
+Frame CD0, Dirección 0xcd0000 0xcd0000 
+Frame CD1, Dirección 0xcd1000 0xcd1000 
+Frame CD2, Dirección 0xcd2000 0xcd2000 
+Frame CD3, Dirección 0xcd3000 0xcd3000 
+Frame CD4, Dirección 0xcd4000 0xcd4000 
+Frame CD5, Dirección 0xcd5000 0xcd5000 
+Frame CD6, Dirección 0xcd6000 0xcd6000 
+Frame CD7, Dirección 0xcd7000 0xcd7000 
+Frame CD8, Dirección 0xcd8000 0xcd8000 
+Frame CD9, Dirección 0xcd9000 0xcd9000 
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=0 Página=0
+Páginas del proceso -->
+Free frame: 0x0cd1
+*********************************
+Last used: 1837171
+LRU Frame: 0xffffffff
+Ptr->LastAccess 1837171
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837171
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837171
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837171
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837171
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837171
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+===================== LRU: 0xffffffff =====================
+Proceso=0, Página 0 cargada en el marco CD1
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  1  0 CD1
+                    0 ->   1  0  0 FFFFFFFF
+                    0 ->   2  0  0 FFFFFFFF
+                    0 ->   3  0  0 FFFFFFFF
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=(nil)
+Proceso=0 Página=0
+Escritura del proceso 0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x5000
+Proceso=0 Página=5
+Páginas del proceso --> 0 
+Free frame: 0x0cd5
+*********************************
+Last used: 1837250
+LRU Frame: 0x0cd1
+Ptr->LastAccess 1837250
+Ptr->FrameNumber 0x0cd1
+*********************************
+Last used: 1837250
+LRU Frame: 0x0cd1
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837250
+LRU Frame: 0x0cd1
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837250
+LRU Frame: 0x0cd1
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837250
+LRU Frame: 0x0cd1
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837250
+LRU Frame: 0x0cd1
+Ptr->LastAccess 1847166
+Ptr->FrameNumber 0xffffffff
+*********************************
+===================== LRU: 0x0cd1 =====================
+Proceso=0, Página 5 cargada en el marco CD5
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  1  1 CD1
+                    0 ->   1  0  0 FFFFFFFF
+                    0 ->   2  0  0 FFFFFFFF
+                    0 ->   3  0  0 FFFFFFFF
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  1  0 CD5
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x1000
+Proceso=0 Página=1
+Páginas del proceso --> 0  5 
+Free frame: 0x0cd8
+*********************************
+Last used: 1837250
+LRU Frame: 0x0cd1
+Ptr->LastAccess 1837250
+Ptr->FrameNumber 0x0cd1
+*********************************
+Last used: 1837250
+LRU Frame: 0x0cd1
+Ptr->LastAccess 1857158
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837250
+LRU Frame: 0x0cd1
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837250
+LRU Frame: 0x0cd1
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1837250
+LRU Frame: 0x0cd1
+Ptr->LastAccess 0
+Ptr->FrameNumbSystem Frame Table area = 0xccc000
+Proccess Page Table area = 0xccd000
+Frames area = 0xcce000
+Base = 0xcda000
+Primer marco CCE
+Frame CCE, Dirección 0xcce000 0xcce000 
+Frame CCF, Dirección 0xccf000 0xccf000 
+Frame CD0, Dirección 0xcd0000 0xcd0000 
+Frame CD1, Dirección 0xcd1000 0xcd1000 
+Frame CD2, Dirección 0xcd2000 0xcd2000 
+Frame CD3, Dirección 0xcd3000 0xcd3000 
+Frame CD4, Dirección 0xcd4000 0xcd4000 
+Frame CD5, Dirección 0xcd5000 0xcd5000 
+Frame CD6, Dirección 0xcd6000 0xcd6000 
+Frame CD7, Dirección 0xcd7000 0xcd7000 
+Frame CD8, Dirección 0xcd8000 0xcd8000 
+Frame CD9, Dirección 0xcd9000 0xcd9000 
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=3 Página=0
+Páginas del proceso -->
+Free frame: 0x0cce
+*********************************
+Last used: 1836508
+LRU Frame: 0xffffffff
+Ptr->LastAccess 1836508
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836508
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836508
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836508
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836508
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836508
+LRU Frame: 0xffffffff
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+===================== LRU: 0xffffffff =====================
+Proceso=3, Página 0 cargada en el marco CCE
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    3 ->   0  1  0 CCE
+                    3 ->   1  0  0 FFFFFFFF
+                    3 ->   2  0  0 FFFFFFFF
+                    3 ->   3  0  0 FFFFFFFF
+                    3 ->   4  0  0 FFFFFFFF
+                    3 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x2000
+Proceso=3 Página=2
+Páginas del proceso --> 0 
+Free frame: 0x0cd2
+*********************************
+Last used: 1836508
+LRU Frame: 0x0cce
+Ptr->LastAccess 1836508
+Ptr->FrameNumber 0x0cce
+*********************************
+Last used: 1836508
+LRU Frame: 0x0cce
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836508
+LRU Frame: 0x0cce
+Ptr->LastAccess 1846648
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836508
+LRU Frame: 0x0cce
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836508
+LRU Frame: 0x0cce
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1836508
+LRU Frame: 0x0cce
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+===================== LRU: 0x0cce =====================
+Proceso=3, Página 2 cargada en el marco CD2
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    3 ->   0  1  0 CCE
+                    3 ->   1  0  0 FFFFFFFF
+                    3 ->   2  1  0 CD2
+                    3 ->   3  0  0 FFFFFFFF
+                    3 ->   4  0  0 FFFFFFFF
+                    3 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=0x2000
+Proceso=3 Página=2
+copied hola soy proceso 3 en la dirección relativa 2000
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x1001
+Proceso=3 Página=1
+Páginas del proceso --> 0  2 
+Free frame: 0x0cd9
+*********************************
+Last used: 1886725
+LRU Frame: 0x0cce
+Ptr->LastAccess 1886725
+Ptr->FrameNumber 0x0cce
+*********************************
+Last used: 1886725
+LRU Frame: 0x0cce
+Ptr->LastAccess 1916864
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1886725
+LRU Frame: 0x0cce
+Ptr->LastAccess 1906544
+Ptr->FrameNumber 0x0cd2
+*********************************
+Last used: 1886725
+LRU Frame: 0x0cce
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1886725
+LRU Frame: 0x0cce
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+Last used: 1886725
+LRU Frame: 0x0cce
+Ptr->LastAccess 0
+Ptr->FrameNumber 0xffffffff
+*********************************
+===================== LRU: 0x0cce =====================
+Proceso=3, Página 1 cargada en el marco CD9
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    3 ->   0  1  0 CCE
+                    3 ->   1  1  0 CD9
+                    3 ->   2  1  1 CD2
+                    3 ->   3  0  0 FFFFFFFF
+                    3 ->   4  0  0 FFFFFFFF
+                    3 ->   5  0  0 FFFFFFFF
+copied hola soy proceso 3 en la dirección relativa 2000
+copied hola soy proceso 3 en la dirección relativa 2000
+Proceso 3, libera los marcos --> CCE  CD9  CD2 
+Termina proceso 3, Total de fallos de página = 3
+System Frame Table area = 0xccc000
+Proccess Page Table area = 0xccd000
+Frames area = 0xcce000
+Base = 0xcda000
+Primer marco CCE
+Frame CCE, Dirección 0xcce000 0xcce000 
+Frame CCF, Dirección 0xccf000 0xccf000 
+Frame CD0, Dirección 0xcd0000 0xcd0000 
+Frame CD1, Dirección 0xcd1000 0xcd1000 
+Frame CD2, Dirección 0xcd2000 0xcd2000 
+Frame CD3, Dirección 0xcd3000 0xcd3000 
+Frame CD4, Dirección 0xcd4000 0xcd4000 
+Frame CD5, Dirección 0xcd5000 0xcd5000 
+Frame CD6, Dirección 0xcd6000 0xcd6000 
+Frame CD7, Dirección 0xcd7000 0xcd7000 
+Frame CD8, Dirección 0xcd8000 0xcd8000 
+Frame CD9, Dirección 0xcd9000 0xcd9000 
+Tiempo total de ejecución 0.241301
