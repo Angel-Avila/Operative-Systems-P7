@@ -1,29 +1,29 @@
-System Frame Table area = 0x902000
-Proccess Page Table area = 0x903000
-Frames area = 0x904000
-Base = 0x910000
-Primer marco 904
-Frame 904, Dirección 0x904000 0x904000 
-Frame 905, Dirección 0x905000 0x905000 
-Frame 906, Dirección 0x906000 0x906000 
-Frame 907, Dirección 0x907000 0x907000 
-Frame 908, Dirección 0x908000 0x908000 
-Frame 909, Dirección 0x909000 0x909000 
-Frame 90A, Dirección 0x90a000 0x90a000 
-Frame 90B, Dirección 0x90b000 0x90b000 
-Frame 90C, Dirección 0x90c000 0x90c000 
-Frame 90D, Dirección 0x90d000 0x90d000 
-Frame 90E, Dirección 0x90e000 0x90e000 
-Frame 90F, Dirección 0x90f000 0x90f000 
+System Frame Table area = 0x1d6a000
+Proccess Page Table area = 0x1d6b000
+Frames area = 0x1d6c000
+Base = 0x1d78000
+Primer marco 1D6C
+Frame 1D6C, Dirección 0x1d6c000 0x1d6c000 
+Frame 1D6D, Dirección 0x1d6d000 0x1d6d000 
+Frame 1D6E, Dirección 0x1d6e000 0x1d6e000 
+Frame 1D6F, Dirección 0x1d6f000 0x1d6f000 
+Frame 1D70, Dirección 0x1d70000 0x1d70000 
+Frame 1D71, Dirección 0x1d71000 0x1d71000 
+Frame 1D72, Dirección 0x1d72000 0x1d72000 
+Frame 1D73, Dirección 0x1d73000 0x1d73000 
+Frame 1D74, Dirección 0x1d74000 0x1d74000 
+Frame 1D75, Dirección 0x1d75000 0x1d75000 
+Frame 1D76, Dirección 0x1d76000 0x1d76000 
+Frame 1D77, Dirección 0x1d77000 0x1d77000 
 ---------------------------
 Page fault handler
 Direccion que provocó el fallo=(nil)
 Proceso=3 Página=0
 Páginas del proceso -->
 ----------------------------- Frames assigned: 0 -----------------------------
-Proceso=3, Página 0 cargada en el marco 904
+Proceso=3, Página 0 cargada en el marco 1D6C
 Tabla de páginas Proc -> Pag Pr Mo Fr
-                    3 ->   0  1  0 904
+                    3 ->   0  1  0 1D6C
                     3 ->   1  0  0 FFFFFFFF
                     3 ->   2  0  0 FFFFFFFF
                     3 ->   3  0  0 FFFFFFFF
@@ -35,11 +35,11 @@ Direccion que provocó el fallo=0x2000
 Proceso=3 Página=2
 Páginas del proceso --> 0 
 ----------------------------- Frames assigned: 1 -----------------------------
-Proceso=3, Página 2 cargada en el marco 908
+Proceso=3, Página 2 cargada en el marco 1D70
 Tabla de páginas Proc -> Pag Pr Mo Fr
-                    3 ->   0  1  0 904
+                    3 ->   0  1  0 1D6C
                     3 ->   1  0  0 FFFFFFFF
-                    3 ->   2  1  0 908
+                    3 ->   2  1  0 1D70
                     3 ->   3  0  0 FFFFFFFF
                     3 ->   4  0  0 FFFFFFFF
                     3 ->   5  0  0 FFFFFFFF
@@ -54,33 +54,33 @@ Direccion que provocó el fallo=0x1001
 Proceso=3 Página=1
 Páginas del proceso --> 0  2 
 ----------------------------- Frames assigned: 2 -----------------------------
-Proceso=3, Página 1 cargada en el marco 905
+Proceso=3, Página 1 cargada en el marco 1D6D
 Tabla de páginas Proc -> Pag Pr Mo Fr
-                    3 ->   0  1  0 904
-                    3 ->   1  1  0 905
-                    3 ->   2  1  1 908
+                    3 ->   0  1  0 1D6C
+                    3 ->   1  1  0 1D6D
+                    3 ->   2  1  1 1D70
                     3 ->   3  0  0 FFFFFFFF
                     3 ->   4  0  0 FFFFFFFF
                     3 ->   5  0  0 FFFFFFFF
 copied hola soy proceso 3 en la dirección relativa 2000
 copied hola soy proceso 3 en la dirección relativa 2000
-Proceso 3, libera los marcos --> 904  905  908 
+Proceso 3, libera los marcos --> 1D6C  1D6D  1D70 
 Termina proceso 3, Total de fallos de página = 3
-System Frame Table area = 0x902000
-Proccess Page Table area = 0x903000
-Frames area = 0x904000
-Base = 0x910000
-Primer marco 904
-Frame 904, Dirección 0x904000 0x904000 
-Frame 905, Dirección 0x905000 0x905000 
-Frame 906, Dirección 0x906000 0x906000 
-Frame 907, Dirección 0x907000 0x907000 
-Frame 908, Dirección 0x908000 0x908000 
-Frame 909, Dirección 0x909000 0x909000 
-Frame 90A, Dirección 0x90a000 0x90a000 
-Frame 90B, Dirección 0x90b000 0x90b000 
-Frame 90C, Dirección 0x90c000 0x90c000 
-Frame 90D, Dirección 0x90d000 0x90d000 
-Frame 90E, Dirección 0x90e000 0x90e000 
-Frame 90F, Dirección 0x90f000 0x90f000 
-Tiempo total de ejecución 0.241400
+System Frame Table area = 0x1d6a000
+Proccess Page Table area = 0x1d6b000
+Frames area = 0x1d6c000
+Base = 0x1d78000
+Primer marco 1D6C
+Frame 1D6C, Dirección 0x1d6c000 0x1d6c000 
+Frame 1D6D, Dirección 0x1d6d000 0x1d6d000 
+Frame 1D6E, Dirección 0x1d6e000 0x1d6e000 
+Frame 1D6F, Dirección 0x1d6f000 0x1d6f000 
+Frame 1D70, Dirección 0x1d70000 0x1d70000 
+Frame 1D71, Dirección 0x1d71000 0x1d71000 
+Frame 1D72, Dirección 0x1d72000 0x1d72000 
+Frame 1D73, Dirección 0x1d73000 0x1d73000 
+Frame 1D74, Dirección 0x1d74000 0x1d74000 
+Frame 1D75, Dirección 0x1d75000 0x1d75000 
+Frame 1D76, Dirección 0x1d76000 0x1d76000 
+Frame 1D77, Dirección 0x1d77000 0x1d77000 
+Tiempo total de ejecución 0.241691

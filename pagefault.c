@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "mmu.h"
 
-#define RESIDENTSETSIZE 24
+#define RESIDENTSETSIZE 3
 
 extern char *base;
 extern int framesbegin;
@@ -30,11 +30,11 @@ int pagefault(char *vaddress)
     // Calcula la página del proceso
     pag_del_proceso=(long) vaddress>>12;
 
-    unassignVF(pag_del_proceso);
+    unassignVF((ptbr+pag_del_proceso)->framenumber);
 
     // Cuenta los marcos asignados al proceso
     i=countframesassigned();
-    
+
     printf("----------------------------- Frames assigned: %d -----------------------------\n", i);
 
     if(i + 1 > 3) {
@@ -108,11 +108,11 @@ unsigned long getLRU() {
   return(lruFrame);
 }
 
-void unassignVF(long pag_del_proceso) {
+void unassignVF(long frame) {
   int start = framesbegin+systemframetablesize;
 
-  if((pag_del_proceso >= start) && (pag_del_proceso < start+systemframetablesize))
-    systemframetable[pag_del_proceso].assigned = 0;
+  if((frame >= start) && (frame < start+systemframetablesize))
+    systemframetable[frame].assigned = 0;
 }
 
 void swapvirtualframe(long pag_del_proceso) {
