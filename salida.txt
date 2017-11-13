@@ -1,29 +1,649 @@
-System Frame Table area = 0x1d6a000
-Proccess Page Table area = 0x1d6b000
-Frames area = 0x1d6c000
-Base = 0x1d78000
-Primer marco 1D6C
-Frame 1D6C, Dirección 0x1d6c000 0x1d6c000 
-Frame 1D6D, Dirección 0x1d6d000 0x1d6d000 
-Frame 1D6E, Dirección 0x1d6e000 0x1d6e000 
-Frame 1D6F, Dirección 0x1d6f000 0x1d6f000 
-Frame 1D70, Dirección 0x1d70000 0x1d70000 
-Frame 1D71, Dirección 0x1d71000 0x1d71000 
-Frame 1D72, Dirección 0x1d72000 0x1d72000 
-Frame 1D73, Dirección 0x1d73000 0x1d73000 
-Frame 1D74, Dirección 0x1d74000 0x1d74000 
-Frame 1D75, Dirección 0x1d75000 0x1d75000 
-Frame 1D76, Dirección 0x1d76000 0x1d76000 
-Frame 1D77, Dirección 0x1d77000 0x1d77000 
+System Frame Table area = 0x1db8000
+Proccess Page Table area = 0x1db9000
+Frames area = 0x1dba000
+Base = 0x1dc6000
+Primer marco 1DBA
+Frame 1DBA, Dirección 0x1dba000 0x1dba000 
+Frame 1DBB, Dirección 0x1dbb000 0x1dbb000 
+Frame 1DBC, Dirección 0x1dbc000 0x1dbc000 
+Frame 1DBD, Dirección 0x1dbd000 0x1dbd000 
+Frame 1DBE, Dirección 0x1dbe000 0x1dbe000 
+Frame 1DBF, Dirección 0x1dbf000 0x1dbf000 
+Frame 1DC0, Dirección 0x1dc0000 0x1dc0000 
+Frame 1DC1, Dirección 0x1dc1000 0x1dc1000 
+Frame 1DC2, Dirección 0x1dc2000 0x1dc2000 
+Frame 1DC3, Dirección 0x1dc3000 0x1dc3000 
+Frame 1DC4, Dirección 0x1dc4000 0x1dc4000 
+Frame 1DC5, Dirección 0x1dc5000 0x1dc5000 
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=0 Página=0
+Páginas del proceso -->
+Frames assigned: 0 
+Páginas del proceso -->
+Proceso=0, Página 0 cargada en el marco 1DBC
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  1  0 1DBC
+                    0 ->   1  0  0 FFFFFFFF
+                    0 ->   2  0  0 FFFFFFFF
+                    0 ->   3  0  0 FFFFFFFF
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=(nil)
+Proceso=0 Página=0
+Escritura del proceso 0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x5000
+Proceso=0 Página=5
+Páginas del proceso --> 0 
+Frames assigned: 1 
+Páginas del proceso --> 0 
+Proceso=0, Página 5 cargada en el marco 1DC0
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  1  1 1DBC
+                    0 ->   1  0  0 FFFFFFFF
+                    0 ->   2  0  0 FFFFFFFF
+                    0 ->   3  0  0 FFFFFFFF
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  1  0 1DC0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x1000
+Proceso=0 Página=1
+Páginas del proceso --> 0  5 
+Frames assigned: 2 
+Páginas del proceso --> 0  5 
+Proceso=0, Página 1 cargada en el marco 1DC3
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  1  1 1DBC
+                    0 ->   1  1  0 1DC3
+                    0 ->   2  0  0 FFFFFFFF
+                    0 ->   3  0  0 FFFFFFFF
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  1  0 1DC0
+---------------------------
+Page fault handler
+Página modificada de la dirección=0x1001
+Proceso=0 Página=1
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x3001
+Proceso=0 Página=3
+Páginas del proceso --> 0  1  5 
+Frames assigned: 3 
+Páginas del proceso --> 0  1  5 
+I'm inside
+LRUFrame: 0
+Proceso=0, Página 3 cargada en el marco 1DBC
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  0  1 1DC6
+                    0 ->   1  1  1 1DC3
+                    0 ->   2  0  0 FFFFFFFF
+                    0 ->   3  1  0 1DBC
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  1  0 1DC0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x2001
+Proceso=0 Página=2
+Páginas del proceso --> 1  3  5 
+Frames assigned: 3 
+Páginas del proceso --> 1  3  5 
+I'm inside
+LRUFrame: 5
+Proceso=0, Página 2 cargada en el marco 1DC0
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  0  1 1DC6
+                    0 ->   1  1  1 1DC3
+                    0 ->   2  1  0 1DC0
+                    0 ->   3  1  0 1DBC
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  0  0 1DC9
+---------------------------
+Page fault handler
+Página modificada de la dirección=0x2001
+Proceso=0 Página=2
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=0 Página=0
+Páginas del proceso --> 1  2  3 
+Frames assigned: 3 
+Páginas del proceso --> 1  2  3 
+I'm inside
+LRUFrame: 1
+Proceso=0, Página 0 cargada en el marco 1DC3
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  1  1 1DC3
+                    0 ->   1  0  1 1DC6
+                    0 ->   2  1  1 1DCSystem Frame Table area = 0x1db8000
+Proccess Page Table area = 0x1db9000
+Frames area = 0x1dba000
+Base = 0x1dc6000
+Primer marco 1DBA
+Frame 1DBA, Dirección 0x1dba000 0x1dba000 
+Frame 1DBB, Dirección 0x1dbb000 0x1dbb000 
+Frame 1DBC, Dirección 0x1dbc000 0x1dbc000 
+Frame 1DBD, Dirección 0x1dbd000 0x1dbd000 
+Frame 1DBE, Dirección 0x1dbe000 0x1dbe000 
+Frame 1DBF, Dirección 0x1dbf000 0x1dbf000 
+Frame 1DC0, Dirección 0x1dc0000 0x1dc0000 
+Frame 1DC1, Dirección 0x1dc1000 0x1dc1000 
+Frame 1DC2, Dirección 0x1dc2000 0x1dc2000 
+Frame 1DC3, Dirección 0x1dc3000 0x1dc3000 
+Frame 1DC4, Dirección 0x1dc4000 0x1dc4000 
+Frame 1DC5, Dirección 0x1dc5000 0x1dc5000 
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=2 Página=0
+Páginas del proceso -->
+Frames assigned: 0 
+Páginas del proceso -->
+Proceso=2, Página 0 cargada en el marco 1DBD
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  1  0 1DBD
+                    2 ->   1  0  0 FFFFFFFF
+                    2 ->   2  0  0 FFFFFFFF
+                    2 ->   3  0  0 FFFFFFFF
+                    2 ->   4  0  0 FFFFFFFF
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=(nil)
+Proceso=2 Página=0
+copiado hola soy proceso 2 en la dirección relativa 0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x3000
+Proceso=2 Página=3
+Páginas del proceso --> 0 
+Frames assigned: 1 
+Páginas del proceso --> 0 
+Proceso=2, Página 3 cargada en el marco 1DC1
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  1  1 1DBD
+                    2 ->   1  0  0 FFFFFFFF
+                    2 ->   2  0  0 FFFFFFFF
+                    2 ->   3  1  0 1DC1
+                    2 ->   4  0  0 FFFFFFFF
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x4000
+Proceso=2 Página=4
+Páginas del proceso --> 0  3 
+Frames assigned: 2 
+Páginas del proceso --> 0  3 
+Proceso=2, Página 4 cargada en el marco 1DC4
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  1  1 1DBD
+                    2 ->   1  0  0 FFFFFFFF
+                    2 ->   2  0  0 FFFFFFFF
+                    2 ->   3  1  0 1DC1
+                    2 ->   4  1  0 1DC4
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=0x4001
+Proceso=2 Página=4
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x1001
+Proceso=2 Página=1
+Páginas del proceso --> 0  3  4 
+Frames assigned: 3 
+Páginas del proceso --> 0  3  4 
+I'm inside
+LRUFrame: 0
+Proceso=2, Página 1 cargada en el marco 1DBD
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  0  1 1DC7
+                    2 ->   1  1  0 1DBD
+                    2 ->   2  0  0 FFFFFFFF
+                    2 ->   3  1  0 1DC1
+                    2 ->   4  1  1 1DC4
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x2001
+Proceso=2 Página=2
+Páginas del proceso --> 1  3  4 
+Frames assigned: 3 
+Páginas del proceso --> 1  3  4 
+I'm inside
+LRUFrame: 3
+Proceso=2, Página 2 cargada en el marco 1DC1
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  0  1 1DC7
+                    2 ->   1  1  0 1DBD
+                    2 ->   2  1  0 1DC1
+                    2 ->   3  0  0 1DCA
+                    2 ->   4  1  1 1DC4
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=0x2001
+Proceso=2 Página=2
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x3001
+Proceso=2 Página=3
+Páginas del proceso --> 1  2  4 
+Frames assigned: 3 
+Páginas del proceso --> 1  2  4 
+I'm inside
+LRUFrame: 4
+Proceso=2, Página 3 cargada en el marco 1DC4
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  0  1 1DC7
+                    2 ->   1  1  0 1DBD
+      System Frame Table area = 0x1db8000
+Proccess Page Table area = 0x1db9000
+Frames area = 0x1dba000
+Base = 0x1dc6000
+Primer marco 1DBA
+Frame 1DBA, Dirección 0x1dba000 0x1dba000 
+Frame 1DBB, Dirección 0x1dbb000 0x1dbb000 
+Frame 1DBC, Dirección 0x1dbc000 0x1dbc000 
+Frame 1DBD, Dirección 0x1dbd000 0x1dbd000 
+Frame 1DBE, Dirección 0x1dbe000 0x1dbe000 
+Frame 1DBF, Dirección 0x1dbf000 0x1dbf000 
+Frame 1DC0, Dirección 0x1dc0000 0x1dc0000 
+Frame 1DC1, Dirección 0x1dc1000 0x1dc1000 
+Frame 1DC2, Dirección 0x1dc2000 0x1dc2000 
+Frame 1DC3, Dirección 0x1dc3000 0x1dc3000 
+Frame 1DC4, Dirección 0x1dc4000 0x1dc4000 
+Frame 1DC5, Dirección 0x1dc5000 0x1dc5000 
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=1 Página=0
+Páginas del proceso -->
+Frames assigned: 0 
+Páginas del proceso -->
+Proceso=1, Página 0 cargada en el marco 1DBB
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  1  0 1DBB
+                    1 ->   1  0  0 FFFFFFFF
+                    1 ->   2  0  0 FFFFFFFF
+                    1 ->   3  0  0 FFFFFFFF
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=(nil)
+Proceso=1 Página=0
+Proceso 1, escribe mensaje de prueba
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x3000
+Proceso=1 Página=3
+Páginas del proceso --> 0 
+Frames assigned: 1 
+Páginas del proceso --> 0 
+Proceso=1, Página 3 cargada en el marco 1DBF
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  1  1 1DBB
+                    1 ->   1  0  0 FFFFFFFF
+                    1 ->   2  0  0 FFFFFFFF
+                    1 ->   3  1  0 1DBF
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x1000
+Proceso=1 Página=1
+Páginas del proceso --> 0  3 
+Frames assigned: 2 
+Páginas del proceso --> 0  3 
+Proceso=1, Página 1 cargada en el marco 1DC2
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  1  1 1DBB
+                    1 ->   1  1  0 1DC2
+                    1 ->   2  0  0 FFFFFFFF
+                    1 ->   3  1  0 1DBF
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=0x1001
+Proceso=1 Página=1
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x2001
+Proceso=1 Página=2
+Páginas del proceso --> 0  1  3 
+Frames assigned: 3 
+Páginas del proceso --> 0  1  3 
+I'm inside
+LRUFrame: 0
+Proceso=1, Página 2 cargada en el marco 1DBB
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  0  1 1DC8
+                    1 ->   1  1  1 1DC2
+                    1 ->   2  1  0 1DBB
+                    1 ->   3  1  0 1DBF
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Página modificada de la dirección=0x2001
+Proceso=1 Página=2
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=1 Página=0
+Páginas del proceso --> 1  2  3 
+Frames assigned: 3 
+Páginas del proceso --> 1  2  3 
+I'm inside
+LRUFrame: 1
+Proceso=1, Página 0 cargada en el marco 1DC2
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  1  1 1DC2
+                    1 ->   1  0  1 1DC8
+                    1 ->   2  1  1 1DBB
+                    1 ->   3  1  0 1DBF
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x1000
+Proceso=1 Página=1
+Páginas del proceso --> 0  2  3 
+Frames assigned: 3 
+Páginas del proceso --> 0  2  3 
+I'm inside
+LRUFrame: 2
+Proceso=1, Página 1 cargada en el marco 1DBB
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  1  1 1DC2
+                    1 ->   1  1  1 1DBB
+                    0
+                    0 ->   3  1  0 1DBC
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  0  0 1DC9
+
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x5000
+Proceso=0 Página=5
+Páginas del proceso --> 0  2  3 
+Frames assigned: 3 
+Páginas del proceso --> 0  2  3 
+I'm inside
+LRUFrame: 2
+Proceso=0, Página 5 cargada en el marco 1DC0
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  1  1 1DC3
+                    0 ->   1  0  1 1DC6
+                    0 ->   2  0  1 1DC9
+                    0 ->   3  1  0 1DBC
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  1  0 1DC0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x1000
+Proceso=0 Página=1
+Páginas del proceso --> 0  3  5 
+Frames assigned: 3 
+Páginas del proceso --> 0  3  5 
+I'm inside
+LRUFrame: 3
+Proceso=0, Página 1 cargada en el marco 1DBC
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  1  1 1DC3
+                    0 ->   1  1  1 1DBC
+                    0 ->   2  0  1 1DC9
+                    0 ->   3  0  0 1DC6
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  1  0 1DC0
+Proceso 0 escribe s, en la dirección relativa 1001
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x3001
+Proceso=0 Página=3
+Páginas del proceso --> 0  1  5 
+Frames assigned: 3 
+Páginas del proceso --> 0  1  5 
+I'm inside
+LRUFrame: 0
+Proceso=0, Página 3 cargada en el marco 1DC3
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  0  1 1DC6
+                    0 ->   1  1  1 1DBC
+                    0 ->   2  0  1 1DC9
+                    0 ->   3  1  0 1DC3
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  1  0 1DC0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x2001
+Proceso=0 Página=2
+Páginas del proceso --> 1  3  5 
+Frames assigned: 3 
+Páginas del proceso --> 1  3  5 
+I'm inside
+LRUFrame: 5
+Proceso=0, Página 2 cargada en el marco 1DC0
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  0  1 1DC6
+                    0 ->   1  1  1 1DBC
+                    0 ->   2  1  1 1DC0
+                    0 ->   3  1  0 1DC3
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  0  0 1DC9
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=0 Página=0
+Páginas del proceso --> 1  2  3 
+Frames assigned: 3 
+Páginas del proceso --> 1  2  3 
+I'm inside
+LRUFrame: 1
+Proceso=0, Página 0 cargada en el marco 1DBC
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  1  1 1DBC
+                    0 ->   1  0  1 1DC6
+                    0 ->   2  1  1 1DC0
+                    0 ->   3  1  0 1DC3
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  0  0 1DC9
+Escritura del proceso 0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x5000
+Proceso=0 Página=5
+Páginas del proceso --> 0  2  3 
+Frames assigned: 3 
+Páginas del proceso --> 0  2  3 
+I'm inside
+LRUFrame: 2
+Proceso=0, Página 5 cargada en el marco 1DC0
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  1  1 1DBC
+                    0 ->   1  0  1 1DC6
+                    0 ->   2  0  1 1DC9
+                    0 ->   3  1  0 1DC3
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  1  0 1DC0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x1000
+Proceso=0 Página=1
+Páginas del proceso --> 0  3  5 
+Frames assigned: 3 
+Páginas del proceso --> 0  3  5 
+I'm inside
+LRUFrame: 3
+Proceso=0, Página 1 cargada en el marco 1DC3
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  1  1 1DBC
+                    0 ->   1  1  1 1DC3
+                    0 ->   2  0  1 1DC9
+                    0 ->   3  0  0 1DC6
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  1  0 1DC0
+Proceso 0 escribe A, en la dirección relativa 1001
+--------------------              2 ->   2  1  1 1DC1
+                    2 ->   3  1  0 1DC4
+                    2 ->   4  0  1 1DCA
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=2 Página=0
+Páginas del proceso --> 1  2  3 
+Frames assigned: 3 
+Páginas del proceso --> 1  2  3 
+I'm inside
+LRUFrame: 1
+Proceso=2, Página 0 cargada en el marco 1DBD
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  1  1 1DBD
+                    2 ->   1  0  0 1DC7
+                    2 ->   2  1  1 1DC1
+                    2 ->   3  1  0 1DC4
+                    2 ->   4  0  1 1DCA
+                    2 ->   5  0  0 FFFFFFFF
+copiado hola soy proceso 2 en la dirección relativa 0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x4000
+Proceso=2 Página=4
+Páginas del proceso --> 0  2  3 
+Frames assigned: 3 
+Páginas del proceso --> 0  2  3 
+I'm inside
+LRUFrame: 2
+Proceso=2, Página 4 cargada en el marco 1DC1
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  1  1 1DBD
+                    2 ->   1  0  0 1DC7
+                    2 ->   2  0  1 1DCA
+                    2 ->   3  1  0 1DC4
+                    2 ->   4  1  1 1DC1
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x1001
+Proceso=2 Página=1
+Páginas del proceso --> 0  3  4 
+Frames assigned: 3 
+Páginas del proceso --> 0  3  4 
+I'm inside
+LRUFrame: 0
+Proceso=2, Página 1 cargada en el marco 1DBD
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  0  1 1DC7
+                    2 ->   1  1  0 1DBD
+                    2 ->   2  0  1 1DCA
+                    2 ->   3  1  0 1DC4
+                    2 ->   4  1  1 1DC1
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x2001
+Proceso=2 Página=2
+Páginas del proceso --> 1  3  4 
+Frames assigned: 3 
+Páginas del proceso --> 1  3  4 
+I'm inside
+LRUFrame: 3
+Proceso=2, Página 2 cargada en el marco 1DC4
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  0  1 1DC7
+                    2 ->   1  1  0 1DBD
+                    2 ->   2  1  1 1DC4
+                    2 ->   3  0  0 1DCA
+                    2 ->   4  1  1 1DC1
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x3001
+Proceso=2 Página=3
+Páginas del proceso --> 1  2  4 
+Frames assigned: 3 
+Páginas del proceso --> 1  2  4 
+I'm inside
+LRUFrame: 4
+Proceso=2, Página 3 cargada en el marco 1DC1
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  0  1 1DC7
+                    2 ->   1  1  0 1DBD
+                    2 ->   2  1  1 1DC4
+                    2 ->   3  1  0 1DC1
+                    2 ->   4  0  1 1DCA
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=2 Página=0
+Páginas del proceso --> 1  2  3 
+Frames assigned: 3 
+Páginas del proceso --> 1  2  3 
+I'm inside
+LRUFrame: 1
+Proceso=2, Página 0 cargada en el marco 1DBD
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  1  1 1DBD
+                    2 ->   1  0  0 1DC7
+                    2 ->   2  1  1 1DC4
+                    2 ->   3  1  0 1DC1
+                    2 ->   4  0  1 1DCA
+                    2 ->   5  0  0 FFFFFFFF
+copiado hola soy proceso 2 en la dirección relativa 0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x4000
+Proceso=2 Página=4
+Páginas del proceso --> 0  2  3 
+Frames assigned: 3 
+Páginas del proceso --> 0  2  3 
+I'm inside
+LRUFrame: 2
+Proceso=2, Página 4 cargada en el marco 1DC4
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  1  1 1DBD
+                    2 ->   1  0  0 1DC7
+                    2 ->   2  0  1 1DCA
+                    2 ->   3  1  0 1DC1
+                    2 ->   4  1  1 1DC4
+                    2 ->   5  0  0 FFFFFFFF
+--------System Frame Table area = 0x1db8000
+Proccess Page Table area = 0x1db9000
+Frames area = 0x1dba000
+Base = 0x1dc6000
+Primer marco 1DBA
+Frame 1DBA, Dirección 0x1dba000 0x1dba000 
+Frame 1DBB, Dirección 0x1dbb000 0x1dbb000 
+Frame 1DBC, Dirección 0x1dbc000 0x1dbc000 
+Frame 1DBD, Dirección 0x1dbd000 0x1dbd000 
+Frame 1DBE, Dirección 0x1dbe000 0x1dbe000 
+Frame 1DBF, Dirección 0x1dbf000 0x1dbf000 
+Frame 1DC0, Dirección 0x1dc0000 0x1dc0000 
+Frame 1DC1, Dirección 0x1dc1000 0x1dc1000 
+Frame 1DC2, Dirección 0x1dc2000 0x1dc2000 
+Frame 1DC3, Dirección 0x1dc3000 0x1dc3000 
+Frame 1DC4, Dirección 0x1dc4000 0x1dc4000 
+Frame 1DC5, Dirección 0x1dc5000 0x1dc5000 
 ---------------------------
 Page fault handler
 Direccion que provocó el fallo=(nil)
 Proceso=3 Página=0
 Páginas del proceso -->
------------------------------ Frames assigned: 0 -----------------------------
-Proceso=3, Página 0 cargada en el marco 1D6C
+Frames assigned: 0 
+Páginas del proceso -->
+Proceso=3, Página 0 cargada en el marco 1DBA
 Tabla de páginas Proc -> Pag Pr Mo Fr
-                    3 ->   0  1  0 1D6C
+                    3 ->   0  1  0 1DBA
                     3 ->   1  0  0 FFFFFFFF
                     3 ->   2  0  0 FFFFFFFF
                     3 ->   3  0  0 FFFFFFFF
@@ -34,12 +654,13 @@ Page fault handler
 Direccion que provocó el fallo=0x2000
 Proceso=3 Página=2
 Páginas del proceso --> 0 
------------------------------ Frames assigned: 1 -----------------------------
-Proceso=3, Página 2 cargada en el marco 1D70
+Frames assigned: 1 
+Páginas del proceso --> 0 
+Proceso=3, Página 2 cargada en el marco 1DBE
 Tabla de páginas Proc -> Pag Pr Mo Fr
-                    3 ->   0  1  0 1D6C
+                    3 ->   0  1  0 1DBA
                     3 ->   1  0  0 FFFFFFFF
-                    3 ->   2  1  0 1D70
+                    3 ->   2  1  0 1DBE
                     3 ->   3  0  0 FFFFFFFF
                     3 ->   4  0  0 FFFFFFFF
                     3 ->   5  0  0 FFFFFFFF
@@ -53,34 +674,199 @@ Page fault handler
 Direccion que provocó el fallo=0x1001
 Proceso=3 Página=1
 Páginas del proceso --> 0  2 
------------------------------ Frames assigned: 2 -----------------------------
-Proceso=3, Página 1 cargada en el marco 1D6D
+Frames assigned: 2 
+Páginas del proceso --> 0  2 
+Proceso=3, Página 1 cargada en el marco 1DC5
 Tabla de páginas Proc -> Pag Pr Mo Fr
-                    3 ->   0  1  0 1D6C
-                    3 ->   1  1  0 1D6D
-                    3 ->   2  1  1 1D70
+                    3 ->   0  1  0 1DBA
+                    3 ->   1  1  0 1DC5
+                    3 ->   2  1  1 1DBE
                     3 ->   3  0  0 FFFFFFFF
                     3 ->   4  0  0 FFFFFFFF
                     3 ->   5  0  0 FFFFFFFF
 copied hola soy proceso 3 en la dirección relativa 2000
 copied hola soy proceso 3 en la dirección relativa 2000
-Proceso 3, libera los marcos --> 1D6C  1D6D  1D70 
+Proceso 3, libera los marcos --> 1DBA  1DC5  1DBE 
 Termina proceso 3, Total de fallos de página = 3
-System Frame Table area = 0x1d6a000
-Proccess Page Table area = 0x1d6b000
-Frames area = 0x1d6c000
-Base = 0x1d78000
-Primer marco 1D6C
-Frame 1D6C, Dirección 0x1d6c000 0x1d6c000 
-Frame 1D6D, Dirección 0x1d6d000 0x1d6d000 
-Frame 1D6E, Dirección 0x1d6e000 0x1d6e000 
-Frame 1D6F, Dirección 0x1d6f000 0x1d6f000 
-Frame 1D70, Dirección 0x1d70000 0x1d70000 
-Frame 1D71, Dirección 0x1d71000 0x1d71000 
-Frame 1D72, Dirección 0x1d72000 0x1d72000 
-Frame 1D73, Dirección 0x1d73000 0x1d73000 
-Frame 1D74, Dirección 0x1d74000 0x1d74000 
-Frame 1D75, Dirección 0x1d75000 0x1d75000 
-Frame 1D76, Dirección 0x1d76000 0x1d76000 
-Frame 1D77, Dirección 0x1d77000 0x1d77000 
-Tiempo total de ejecución 0.241691
+1 ->   2  0  1 1DC8
+                    1 ->   3  1  0 1DBF
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x2001
+Proceso=1 Página=2
+Páginas del proceso --> 0  1  3 
+Frames assigned: 3 
+Páginas del proceso --> 0  1  3 
+I'm inside
+LRUFrame: 0
+Proceso=1, Página 2 cargada en el marco 1DC2
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  0  1 1DC8
+                    1 ->   1  1  1 1DBB
+                    1 ->   2  1  1 1DC2
+                    1 ->   3  1  0 1DBF
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=(nil)
+Proceso=1 Página=0
+Páginas del proceso --> 1  2  3 
+Frames assigned: 3 
+Páginas del proceso --> 1  2  3 
+I'm inside
+LRUFrame: 1
+Proceso=1, Página 0 cargada en el marco 1DBB
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  1  1 1DBB
+                    1 ->   1  0  1 1DC8
+                    1 ->   2  1  1 1DC2
+                    1 ->   3  1  0 1DBF
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+PAoceso 1, escribe mensaje de prueba
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x1000
+Proceso=1 Página=1
+Páginas del proceso --> 0  2  3 
+Frames assigned: 3 
+Páginas del proceso --> 0  2  3 
+I'm inside
+LRUFrame: 2
+Proceso=1, Página 1 cargada en el marco 1DC2
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  1  1 1DBB
+                    1 ->   1  1  1 1DC2
+                    1 ->   2  0  1 1DC8
+                    1 ->   3  1  0 1DBF
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x2001
+Proceso=1 Página=2
+Páginas del proceso --> 0  1  3 
+Frames assigned: 3 
+Páginas del proceso --> 0  1  3 
+I'm inside
+LRUFrame: 0
+Proceso=1, Página 2 cargada en el marco 1DBB
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    1 ->   0  0  1 1DC8
+                    1 ->   1  1  1 1DC2
+                    1 ->   2  1  1 1DBB
+                    1 ->   3  1  0 1DBF
+                    1 ->   4  0  0 FFFFFFFF
+                    1 ->   5  0  0 FFFFFFFF
+Proceso 1, libera los marcos --> 1DC2  1DBB  1DBF 
+Termina proceso 1, Total de fallos de página = 10
+-------
+Page fault handler
+Direccion que provocó el fallo=0x3001
+Proceso=0 Página=3
+Páginas del proceso --> 0  1  5 
+Frames assigned: 3 
+Páginas del proceso --> 0  1  5 
+I'm inside
+LRUFrame: 0
+Proceso=0, Página 3 cargada en el marco 1DBC
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  0  1 1DC6
+                    0 ->   1  1  1 1DC3
+                    0 ->   2  0  1 1DC9
+                    0 ->   3  1  0 1DBC
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  1  0 1DC0
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x2001
+Proceso=0 Página=2
+Páginas del proceso --> 1  3  5 
+Frames assigned: 3 
+Páginas del proceso --> 1  3  5 
+I'm inside
+LRUFrame: 5
+Proceso=0, Página 2 cargada en el marco 1DC0
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    0 ->   0  0  1 1DC6
+                    0 ->   1  1  1 1DC3
+                    0 ->   2  1  1 1DC0
+                    0 ->   3  1  0 1DBC
+                    0 ->   4  0  0 FFFFFFFF
+                    0 ->   5  0  0 1DC9
+Proceso 0, libera los marcos --> 1DC3  1DC0  1DBC 
+Termina proceso 0, Total de fallos de página = 15
+-------------------
+Page fault handler
+Direccion que provocó el fallo=0x1001
+Proceso=2 Página=1
+Páginas del proceso --> 0  3  4 
+Frames assigned: 3 
+Páginas del proceso --> 0  3  4 
+I'm inside
+LRUFrame: 0
+Proceso=2, Página 1 cargada en el marco 1DBD
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  0  1 1DC7
+                    2 ->   1  1  0 1DBD
+                    2 ->   2  0  1 1DCA
+                    2 ->   3  1  0 1DC1
+                    2 ->   4  1  1 1DC4
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x2001
+Proceso=2 Página=2
+Páginas del proceso --> 1  3  4 
+Frames assigned: 3 
+Páginas del proceso --> 1  3  4 
+I'm inside
+LRUFrame: 3
+Proceso=2, Página 2 cargada en el marco 1DC1
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  0  1 1DC7
+                    2 ->   1  1  0 1DBD
+                    2 ->   2  1  1 1DC1
+                    2 ->   3  0  0 1DCA
+                    2 ->   4  1  1 1DC4
+                    2 ->   5  0  0 FFFFFFFF
+---------------------------
+Page fault handler
+Direccion que provocó el fallo=0x3001
+Proceso=2 Página=3
+Páginas del proceso --> 1  2  4 
+Frames assigned: 3 
+Páginas del proceso --> 1  2  4 
+I'm inside
+LRUFrame: 4
+Proceso=2, Página 3 cargada en el marco 1DBA
+Tabla de páginas Proc -> Pag Pr Mo Fr
+                    2 ->   0  0  1 1DC7
+                    2 ->   1  1  0 1DBD
+                    2 ->   2  1  1 1DC1
+                    2 ->   3  1  0 1DBA
+                    2 ->   4  0  1 1DCA
+                    2 ->   5  0  0 FFFFFFFF
+Proceso 2, libera los marcos --> 1DBD  1DC1  1DBA 
+Termina proceso 2, Total de fallos de página = 16
+System Frame Table area = 0x1db8000
+Proccess Page Table area = 0x1db9000
+Frames area = 0x1dba000
+Base = 0x1dc6000
+Primer marco 1DBA
+Frame 1DBA, Dirección 0x1dba000 0x1dba000 
+Frame 1DBB, Dirección 0x1dbb000 0x1dbb000 
+Frame 1DBC, Dirección 0x1dbc000 0x1dbc000 
+Frame 1DBD, Dirección 0x1dbd000 0x1dbd000 
+Frame 1DBE, Dirección 0x1dbe000 0x1dbe000 
+Frame 1DBF, Dirección 0x1dbf000 0x1dbf000 
+Frame 1DC0, Dirección 0x1dc0000 0x1dc0000 
+Frame 1DC1, Dirección 0x1dc1000 0x1dc1000 
+Frame 1DC2, Dirección 0x1dc2000 0x1dc2000 
+Frame 1DC3, Dirección 0x1dc3000 0x1dc3000 
+Frame 1DC4, Dirección 0x1dc4000 0x1dc4000 
+Frame 1DC5, Dirección 0x1dc5000 0x1dc5000 
+Tiempo total de ejecución 0.241178

@@ -15,7 +15,7 @@ extern struct PROCESSPAGETABLE *ptbr;
 extern struct PROCESSPAGETABLE *gprocesspagetable;
 
 int getfreeframe();
-void unassignVF();
+void unassignVF(unsigned int frame);
 void swapvirtualframe();
 unsigned long getLRU();
 // Rutina de fallos de página
@@ -35,11 +35,11 @@ int pagefault(char *vaddress)
     // Cuenta los marcos asignados al proceso
     i=countframesassigned();
 
-    printf("----------------------------- Frames assigned: %d -----------------------------\n", i);
+    printf("Frames assigned: %d \n", i);
 
-    if(i + 1 > 3) {
-      printf("GONNA SWAP NOOW\n");
-      swapvirtualframe(pag_del_proceso);
+    //if(i + 1 > 3) {
+      //printf("GONNA SWAP NOOW\n");
+      swapvirtualframe();
 
       // Copiar marco
       /*FILE *swap = fopen("swap", "w");
@@ -47,7 +47,7 @@ int pagefault(char *vaddress)
       printf("Offset: %d\n", offset);
       fseek(swap, offset, SEEK_SET);
       fclose(swap);*/
-    }
+    //}
 
     frame = getfreeframe();
 
@@ -84,63 +84,56 @@ int getfreeframe()
 unsigned long getLRU() {
   int i;
   unsigned long lastUsed = ptbr->tlastaccess;
-  struct PROCESSPAGETABLE *ptptr = ptbr;
-  int lruFrame = ptbr->framenumber;
+  for(i = 0; i < ptlr; i++){
+    if(ptbr[i].presente){
+      lastUsed = i;
+      break;
+    }
+  }
 
-  // Busca un marco libre en el sistema
-  for(i=0;i<ptlr;i++) {
+  /* Obtener el índice del marco a liberar */
+  for(i = 0; i < ptlr; i++){
 
-    if(ptptr->tlastaccess < lastUsed && ptptr->framenumber != -1 && ptptr->presente == 1) {
-      lastUsed = ptptr->tlastaccess;
-      lruFrame = ptptr->framenumber;
+    if(ptbr[i].presente){
+      if(ptbr[i].tlastaccess < ptbr[lastUsed].tlastaccess){
+        lastUsed = i;
+      }
     }
 
-    /*printf("*********************************\n");
-    printf("Last used: %d\n", lastUsed);
-    printf("LRU Frame: 0x%04x\n", lruFrame);
-    printf("Ptr->LastAccess %d\n", ptptr->tlastaccess);
-    printf("Ptr->FrameNumber 0x%04x\n", ptptr->framenumber);*/
-
-    ptptr++;
   }
-  //printf("*********************************\n");
 
-  return(lruFrame);
+  return(lastUsed);
 }
 
-void unassignVF(long frame) {
+void unassignVF(unsigned int frame) {
   int start = framesbegin+systemframetablesize;
 
   if((frame >= start) && (frame < start+systemframetablesize))
     systemframetable[frame].assigned = 0;
 }
 
-void swapvirtualframe(long pag_del_proceso) {
-  int i;
+void swapvirtualframe() {
   int start = framesbegin+systemframetablesize;
 
-  int lruFrame = getLRU(); // regresa el LRU frame en hexa
-  struct PROCESSPAGETABLE *ptptr = ptbr;
+  int assigned = countframesassigned() + 1;
 
-  printf("LRUFrame: %d\n", lruFrame);
+  //Si con este nuevo, se excede de los permitidos, hacer cambio
+  if(assigned > (RESIDENTSETSIZE)) {
+    printf("I'm inside\n");
+    int lruFrame = getLRU(); // regresa el LRU frame en hexa
 
-  for(i=0;i<ptlr;i++) {
-    printf("framenumber: %d\n", ptptr->framenumber);
-    if(ptptr->framenumber == lruFrame) {
-      printf("Hola, entré aquí");
-      break;
-    }
-    ptptr++;
-  }
+    printf("LRUFrame: %d\n", lruFrame);
 
-  ptptr->presente = 0;
+    ptbr[lruFrame].presente = 0;
 
-  systemframetable[ptptr->framenumber].assigned = 0;
+    systemframetable[ptbr[lruFrame].framenumber].assigned = 0;
 
-  for(i= start; i<start+systemframetablesize; i++)
-    if(!systemframetable[i].assigned) {
-      systemframetable[i].assigned=1;
-      ptbr[ptptr->framenumber].framenumber = i;
-      break;
+    for(int i= start; i<start+systemframetablesize; i++)
+      if(!systemframetable[i].assigned) {
+        systemframetable[i].assigned=1;
+        ptbr[lruFrame].framenumber = i;
+        break;
+      }
+
     }
 }
