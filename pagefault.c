@@ -15,6 +15,7 @@ extern struct PROCESSPAGETABLE *ptbr;
 extern struct PROCESSPAGETABLE *gprocesspagetable;
 
 int getfreeframe();
+void unassignVF();
 void swapvirtualframe();
 unsigned long getLRU();
 // Rutina de fallos de página
@@ -28,10 +29,15 @@ int pagefault(char *vaddress)
 
     // Calcula la página del proceso
     pag_del_proceso=(long) vaddress>>12;
+
+    unassignVF(pag_del_proceso);
+
     // Cuenta los marcos asignados al proceso
     i=countframesassigned();
-    printf("-----------------------------   %d    -----------------------------\n", i);
-    if(i > 3) {
+    
+    printf("----------------------------- Frames assigned: %d -----------------------------\n", i);
+
+    if(i + 1 > 3) {
       printf("GONNA SWAP NOOW\n");
       swapvirtualframe(pag_del_proceso);
 
@@ -102,19 +108,28 @@ unsigned long getLRU() {
   return(lruFrame);
 }
 
-void swapvirtualframe(long pag_del_proceso) {
-  int i;
+void unassignVF(long pag_del_proceso) {
   int start = framesbegin+systemframetablesize;
 
   if((pag_del_proceso >= start) && (pag_del_proceso < start+systemframetablesize))
     systemframetable[pag_del_proceso].assigned = 0;
+}
+
+void swapvirtualframe(long pag_del_proceso) {
+  int i;
+  int start = framesbegin+systemframetablesize;
 
   int lruFrame = getLRU(); // regresa el LRU frame en hexa
   struct PROCESSPAGETABLE *ptptr = ptbr;
 
+  printf("LRUFrame: %d\n", lruFrame);
+
   for(i=0;i<ptlr;i++) {
-    if(ptptr->framenumber == lruFrame)
+    printf("framenumber: %d\n", ptptr->framenumber);
+    if(ptptr->framenumber == lruFrame) {
+      printf("Hola, entré aquí");
       break;
+    }
     ptptr++;
   }
 
